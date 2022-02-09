@@ -14,5 +14,6 @@ public interface Drawable {
      * @param g The Graphics context onto which this Object will 
      * display itself.
      */
+    // Ryan is awesome
     void draw(Graphics g);
 }
