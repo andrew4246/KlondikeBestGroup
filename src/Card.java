@@ -4,16 +4,13 @@ import java.awt.event.*;
 /** represents a playing card that can draw itself. */
 public class Card implements Drawable, Updateable{
 
-    private int suit;
-    private int value;
-    private boolean faceUp; 
-    private Location L;
+    private int suit, value, x, y;
+    private boolean faceUp;
 
-    public Card(int suit, int value, Location L){
+    public Card(int suit, int value, int x, int y){
         this.suit = suit;
         this.value = value;
         faceUp = false;
-        this.L = L;
     }
 
     public void draw(Graphics g){
