@@ -1,44 +1,66 @@
 import java.awt.Graphics;
-import java.awt.*;
+import java.awt.event.*;
 import java.io.File;
 import java.io.IOException;
-import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+
 import javax.imageio.ImageIO;
+
+import java.awt.*;
 
 /** represents a playing card that can draw itself. */
 public class Card implements Drawable, Updateable{
 
-    private int suit, value, color, x, y;
-    private boolean faceUp;
-    private String[] suitRef = {"c", "s", "h", "d"};
-    Image frontImage, backImage;
+    private int suit;
+    private int value;
+    private boolean faceUp; 
+    private int x;
+    private int y;
+    static Image back;
+    static Image front;
+    public String[] ss = {"c", "d", "h", "s"};
+    public String[] vs = {"1", "2", "3", "4", "5", "6", "7", 
+    "8", "9", "10", "j", "q", "k"};
+    public ArrayList<Card> card = new ArrayList<>(52);
 
-/** Constructor for a new Card. Takes in the suit, value, x coordinate, and y coordinate. The suit is an int (0-3) 0 = club, 1 = spade, 2 = heart, 3 = daimond. The color of the card (0 - black, 1 - red) is determined from the suit.
-*/
     public Card(int suit, int value, int x, int y){
         this.suit = suit;
         this.value = value;
         faceUp = false;
+        this.x = x;
+        this.y = y;
+    }
 
-        String fileName = "";
-        fileName += "images/cards/";
-        fileName += suitRef[suit];
-        fileName += value;
-        fileName += ".png";
+    public int getSuit(){
+        return suit;
+    }
+    public int getValue(){
+        return value;
+    }
 
+    public void draw(Graphics g, int suit, int value){
         try {
-			frontImage = ImageIO.read(new File(fileName));
-			backImage = ImageIO.read(new File("images/cards/b1fv.png"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+            back = ImageIO.read(new File("images/cards/b1fv.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            String s = "images/cards/" + ss[suit] + vs[value] + ".png";
+            front = ImageIO.read(new File(s));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public void draw(Graphics g){
-
-    }
 
     public void update(ActionEvent e){
 
     }
+
+    @Override
+    public void draw(Graphics g) {
+        // TODO Auto-generated method stub
+        
+    }
 }
+
