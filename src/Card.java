@@ -15,7 +15,7 @@ public class Card implements Drawable, Updateable{
 
 /** Constructor for a new Card. Takes in the suit, value, x coordinate, and y coordinate. The suit is an int (0-3) 0 = club, 1 = spade, 2 = heart, 3 = daimond. The color of the card (0 - black, 1 - red) is determined from the suit.
 */
-    public Card(int suit, int value, int x, int y){
+    public Card(int suit, int value){
         this.suit = suit;
         this.value = value;
         faceUp = false;
@@ -35,10 +35,23 @@ public class Card implements Drawable, Updateable{
     }
 
     public void draw(Graphics g){
+        if(faceUp) g.drawImage(frontImage, x, y, null);
+        else g.drawImage(backImage, x, y, null);
+    }
 
+    public void flip(){
+        faceUp = !faceUp;
+    }
+
+    public boolean isFaceUp(){
+        return faceUp;
     }
 
     public void update(ActionEvent e){
-
+    }
+    
+    public void updateLocation(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 }
