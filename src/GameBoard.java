@@ -13,7 +13,7 @@ public class GameBoard implements Drawable, Updateable {
 
 	Image testImage, backImage;
 	public static final int OFFSET_X = 40, OFFSET_Y = 20;
-	
+	private ArrayList<Card> cards = new ArrayList<Card>();
 	 
 	private int numdraws=0;
 	
@@ -61,6 +61,16 @@ public class GameBoard implements Drawable, Updateable {
 		System.out.println("You just clicked "+p);
 
 
+	}
+	public void drawPiles(){
+		/* GET THE COORDINATES FOR THE ACEPILES
+		for(int i = 1; i < 5; i++){
+			new acePile(,, cards);
+		}
+		*/
+		for(int x = 1; x < 6; x++){
+			new normalPile(150*(x*100), 250*(x*50), cards);
+		}
 	}
 
 	@Override
