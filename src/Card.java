@@ -37,6 +37,24 @@ public class Card implements Drawable, Updateable{
     public void draw(Graphics g){
         if(faceUp) g.drawImage(frontImage, x, y, null);
         else g.drawImage(backImage, x, y, null);
+	/*
+	int j = 0;
+	for (int i = 0; i < j+1; i++){
+		Card c = new Card(1,1);
+		c.updateLocation(150 + (j-1)*100, 250 + (i)*50);
+		c.draw(g);
+		if (j < 7){
+			if (j > 1 && i < j){
+				j = j;
+				i = i;
+			}
+			else{
+				j++;
+				i = 0;
+			}
+		}
+	}
+	*/
     }
 
     public void flip(){
