@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class normalPile extends Pile{
 
-    public acePile(int x, int y, ArrayList<Card> cards){
+    public normalPile(int x, int y, ArrayList<Card> cards){
         super(x, y, cards);
     }
 
