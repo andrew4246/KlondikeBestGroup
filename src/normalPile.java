@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import java.util.ArrayList;
 
-public class acePile extends Pile{
+public class normalPile extends Pile{
 
     public acePile(int x, int y, ArrayList<Card> cards){
         super(x, y, cards);
