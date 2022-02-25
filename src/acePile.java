@@ -5,9 +5,13 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
 public class acePile extends Pile{
+    private int x = 550 , y = 50, nth;
+    
 
-    public acePile(int x, int y, ArrayList<Card> cards){
-        super(x, y, cards);
+    public acePile(ArrayList<Card> cards, int nth){
+        super(cards);
+        this.nth = nth;
+        x += 50*nth;
     }
 
     @Override
