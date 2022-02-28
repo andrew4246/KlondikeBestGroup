@@ -14,10 +14,9 @@ public abstract class Pile implements Drawable, Updateable {
     protected int y;
     protected ArrayList<Card> list = new ArrayList<Card>();
     
-    public Pile(int xVal, int yVal, ArrayList<Card> lst){
-        this.x = xVal;
-        this.y = yVal;
-        this.list = lst;
+    public Pile(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
     private void addCard(Card c){

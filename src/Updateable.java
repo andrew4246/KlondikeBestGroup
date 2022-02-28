@@ -4,9 +4,15 @@ import java.awt.event.*;
  * the ActionEvent that may be used to help determine 
  * what to do.  The ActionEvent does not need  to be used.
  */
+import javax.swing.Timer;
+
+import org.w3c.dom.events.Event;
+
+
 public interface Updateable {
     /**@param a the ActionEvent that cause this update request.
      * This will usually be called based on a Timer event occurring.
-     */
+     */ 
+    
     void update(ActionEvent a);
 }
