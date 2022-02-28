@@ -69,7 +69,7 @@ public class GameBoard implements Drawable, Updateable {
 		}
 		*/
 		for(int x = 1; x < 6; x++){
-			new NormalPile(150*(x*100), 250*(x*50));
+			new OpenPile(150*(x*100), 250*(x*50));
 		}
 	}
 

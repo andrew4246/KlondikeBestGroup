@@ -4,17 +4,17 @@ import java.awt.event.ActionEvent;
 
 import java.util.ArrayList;
 
-public class normalPile extends Pile{
+public class OpenPile extends Pile{
 
-    public normalPile(int x, int y, ArrayList<Card> cards){
-        super(x, y, cards);
+    public OpenPile(int x, int y){
+        super(x, y);
     }
 
     @Override
     public void draw(Graphics g) {
 
 		g.setColor(new Color(40, 155, 70));
-        g.drawRect(x, y, GameBoard.xDim, GameBoard.yDim);
+        g.drawRect(x, y, 71, 96);
 
     }
 
@@ -25,10 +25,12 @@ public class normalPile extends Pile{
 
     @Override
     public boolean canAddCard(Card c) {
+        /*
         if(this.list.size() == c.getValue() ){
             return true;
         }
         return false;
+        */
+        return true;
     }
-
 }
