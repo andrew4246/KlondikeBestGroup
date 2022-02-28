@@ -23,11 +23,16 @@ public abstract class Pile implements Drawable, Updateable {
         list.add(c);
     }
 
-    private void removeCards(int length){ // make a return method to see what cards were removed
+    private ArrayList<Card> removeCards(int length){ // make a return method to see what cards were removed
+        //SPLIT ARRAYLIST
+        List<Card> answ = list.subList(list.size()-length, list.size());
         for(int i = 0; i < length; i++){
             list.remove(list.size()-1);
         }
+        return (ArrayList<Card>) answ;
     }
+
+
 
 
 }
