@@ -48,8 +48,7 @@ public class KlondikeGame {
 				panel.repaint();
 			}
 		});
-		
-		Timer timer = new Timer(50, null);
+
 		
 		timer.start();
 	}

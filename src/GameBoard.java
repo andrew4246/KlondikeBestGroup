@@ -14,7 +14,7 @@ public class GameBoard implements Drawable, Updateable {
 	Image testImage, backImage;
 	public static final int OFFSET_X = 40, OFFSET_Y = 20;
 	private ArrayList<Card> cards = new ArrayList<Card>();
-	 
+	private boolean is = true;
 	private int numdraws=0;
 	
 	
@@ -34,8 +34,10 @@ public class GameBoard implements Drawable, Updateable {
 	 */
 	public void draw(Graphics g) {
 		numdraws++;
+		
 		g.setColor(new Color(40, 155, 70));
 		g.fillRect(0, 0, 3000, 2000);
+		/*
 		Card c = new Card(1, 1);
 		c.updateLocation(100, 100);
 		c.draw(g);
@@ -46,6 +48,18 @@ public class GameBoard implements Drawable, Updateable {
 		g.drawImage(testImage, 30, 80, null);
 		g.drawImage(backImage, 100, 80, null);
 		g.drawImage(backImage, 105, 100, null);
+		*/
+		ActionEvent a = null;
+		OpenPile p = new OpenPile(100, 100);
+		p.addCard(new Card(1, 1));
+		p.addCard(new Card(1, 1));
+		p.addCard(new Card(1, 1));
+		p.addCard(new Card(1, 1));
+		p.getTopCard().flip();
+		p.addCard(new Card(1, 1));
+		p.update(a);
+		p.draw(g);
+
 	}
 
 

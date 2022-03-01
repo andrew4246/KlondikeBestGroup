@@ -72,4 +72,12 @@ public class Card implements Drawable, Updateable{
         this.x = x;
         this.y = y;
     }
+
+    @Override
+    public String toString(){
+        String s = "";
+        s += suitRef[suit];
+        s += value;
+        return s;
+    }
 }

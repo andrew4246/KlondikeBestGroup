@@ -13,14 +13,28 @@ public class OpenPile extends Pile{
     @Override
     public void draw(Graphics g) {
 
-		g.setColor(new Color(40, 155, 70));
-        g.drawRect(x, y, 71, 96);
+		g.setColor(new Color(40, 155, 100));
+        g.drawRect(x, y, 70, 95);
+        for(int i = 0; i < list.size(); i++){
+            list.get(i).draw(g);
+        }
 
     }
 
     @Override
     public void update(ActionEvent a) {
         // TODO Auto-generated method stub
+        int i = 0;
+        for(int x = 0; x < list.size(); x++){
+            list.get(x).updateLocation(this.x, (y + (i*28) + ((x-i)*14) ));
+            if(list.get(x).isFaceUp()){
+                i++;
+            }
+        }
+    }
+
+    public Card getTopCard(){
+        return list.get(list.size() - 1);
     }
 
     @Override
