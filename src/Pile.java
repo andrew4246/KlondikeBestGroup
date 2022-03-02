@@ -34,6 +34,8 @@ public abstract class Pile implements Drawable, Updateable {
         return (ArrayList<Card>) answ;
     }
 
+    public ArrayList<Card> getList(){return list;}
+
 
 
 

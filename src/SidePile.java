@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class SidePile extends Pile{
 
     public SidePile(int x, int y, ArrayList<Card> lst) {
-        super(x, y, lst);
+        super(x, y);
         //TODO Auto-generated constructor stub
     }
 

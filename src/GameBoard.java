@@ -50,13 +50,12 @@ public class GameBoard implements Drawable, Updateable {
 		g.drawImage(backImage, 105, 100, null);
 		*/
 		ActionEvent a = null;
-		OpenPile p = new OpenPile(100, 100);
-		p.addCard(new Card(1, 1));
-		p.addCard(new Card(1, 1));
-		p.addCard(new Card(1, 1));
-		p.addCard(new Card(1, 1));
+		OpenPile p = new OpenPile(150, 150);
+		Deck d = new Deck(50, 50);
+		for(int i = 0; i < 11; i++){
+			p.addCard(d.draw());
+		}
 		p.getTopCard().flip();
-		p.addCard(new Card(1, 1));
 		p.update(a);
 		p.draw(g);
 
